@@ -1,0 +1,26 @@
+[defaults]
+
+host_key_checking = False
+inventory = ./inventory
+
+# Logging
+callback_whitelist = profile_tasks
+
+# Fact Caching :
+gathering = smart
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+
+# Forks
+forks=10
+
+# Strategies
+# strategy = free
+# Mitogen
+# strategy_plugins = mitogen-0.2.9/ansible_mitogen/plugins/strategy
+# strategy = mitogen_linear
+
+# SSH Config
+# [ssh_connection]
+pipelining=True
+ssh_args = -o HostKeyAlgorithms=+ssh-dss -o ControlMaster=auto -o ControlPersist=30m -o ConnectionAttempts=1 -o UserKnownHostsFile=/dev/null -o 'PreferredAuthentications password,publickey'

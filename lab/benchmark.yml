@@ -1,0 +1,44 @@
+- hosts: all
+  tasks:
+    - name: "With command"
+      command: touch /tmp/lionel
+      with_sequence: start=1 end="{{end|default(100)}}"
+  tags: with-command
+
+- hosts: all
+  tasks:
+    - name: "With module"
+      file:
+        path: /tmp/lionel
+        state: touch
+      with_sequence: start=1 end="{{end|default(100)}}"
+  tags: with-module
+
+- hosts: all
+  tasks:
+  - name: "Create a directory"
+    file:
+      dest: /tmp/templates
+      state: "{{item}}"
+    with_items: ["absent", "directory"]
+
+  - name: "Copy 100 files"
+    copy:
+      dest: /tmp/templates/{{item}}
+      mode: 0755
+      content:
+        Hello from "{{item}}"
+    with_sequence: start=1 end="{{end|default(100)}}"
+  tags: test-templates
+
+- hosts: all
+  become: yes
+  roles:
+    - geerlingguy.repo-remi
+    - geerlingguy.apache
+    - geerlingguy.mysql
+    - geerlingguy.php-versions
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    - geerlingguy.composer
+  tags: multiple-roles
