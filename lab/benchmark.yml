@@ -29,7 +29,6 @@
       content:
         Hello from "{{item}}"
     with_sequence: start=1 end="{{end|default(100)}}"
-  tags: test-templates
 
 - hosts: all
   become: yes

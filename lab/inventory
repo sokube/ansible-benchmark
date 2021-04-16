@@ -1,9 +1,0 @@
-[nodes]
-node0 ansible_host=172.25.0.2 ansible_user=root
-node1 ansible_host=172.25.0.3 ansible_user=root
-node2 ansible_host=172.25.0.4 ansible_user=root
-node3 ansible_host=172.25.0.5 ansible_user=root
-node4 ansible_host=172.25.0.6 ansible_user=root
-node5 ansible_host=172.25.0.7 ansible_user=root
-node6 ansible_host=172.25.0.8 ansible_user=root
-node7 ansible_host=172.25.0.9 ansible_user=root

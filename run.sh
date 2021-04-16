@@ -1,6 +1,7 @@
 #!/bin/bash
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Please modify the number of Hosts !
 NOF_HOSTS=8
 
 NETWORK_NAME="ansible.lab"
