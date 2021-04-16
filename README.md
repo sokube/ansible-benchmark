@@ -8,6 +8,7 @@ This script is designed for Docker Playground !
 (https://labs.play-with-docker.com/)  
 # How to run the lab
 `git clone https://github.com/sokube/ansible-benchmark.git`  
+`cd ansible-benchmark`
 `./build-images.sh`  
 Edit run.sh script to specify the number of hosts you need for your Lab (NOF_HOSTS)  
 `./run.sh`
