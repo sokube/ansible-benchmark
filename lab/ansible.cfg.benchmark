@@ -4,7 +4,7 @@ host_key_checking = False
 inventory = ./inventory
 
 # Logging
-callback_whitelist = profile_task
+callback_whitelist = profile_tasks
 
 # Fact Caching :
 gathering = smart
